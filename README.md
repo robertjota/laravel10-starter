@@ -45,7 +45,7 @@ _Sigue las siguientes instrucciones para clonar el repositorio_
 _Clone el repositorio_
 
 ```
-git clone https://github.com/jorgehernandezch/Laravel-9-AdminLTE.git
+git clone https://github.com/robertjota/laravel10-starter.git
 ```
 
 _Instale todas las dependencias del Proyecto con_
