@@ -71,8 +71,7 @@
     if (info) {
         Swal.fire({
             icon: 'success',
-            title: '{{ session('
-            info ') }}',
+            title: info,
             showConfirmButton: false,
             timer: 2500
         });
