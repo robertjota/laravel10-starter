@@ -103,17 +103,21 @@ php artisan serve
 ```
 
 _Si todo está correcto puede acceder al proyecto en la dirección http://localhost:8000_ 
-Usuario: admin@admin.com
-Contraseñ: password
 
-_Personalización_
+Usuario: admin@admin.com
+
+Contraseña: password
+
+### Personalización
+
 El sistema base está diseñado para ser personalizado. Puedes modificar lo que requieras para adaptar el sistema a tus necesidades.
 Desarrolle esta base porque no encontre una que se adaptara a lo que yo necesitaba y que realmente ahorrara tiempo para nuevos desarrollos, espero les sea util sobretodo a los que se inician con laravel.
 
-_Contribuir_
+### Contribuir
+
 Las contribuciones son bienvenidas. Puedes reportar problemas o enviar pull requests en el repositorio de GitHub.
 
-_Licencia_
+### Licencia
 Este proyecto está bajo la licencia MIT.
 
 ---
