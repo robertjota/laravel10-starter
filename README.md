@@ -18,25 +18,25 @@ Para clonar este repositorio, debes tener instalado un servidor Apache, PHP y MS
 
 Antes de comenzar verifica si tienes composer con cualquiera de los siguientes comandos en tu terminal.
 ```
-composer --version 
+composer --version
 composer -V
 ```
-Si no lo tienes instalado lo pueden instalar siguiendo la documentación oficial en:  
+Si no lo tienes instalado lo pueden instalar siguiendo la documentación oficial en:
 https://getcomposer.org/doc/00-intro.md
 
 Verifica tambien la version de NPM en la terminal con
 ```
 npm -v
 ```
-Si no lo tienes instalado lo pueden instalar siguiendo la documentación oficial en:  
+Si no lo tienes instalado lo pueden instalar siguiendo la documentación oficial en:
 https://www.npmjs.com/get-npm
 
 Verifica las versiones de cada uno de ellos
 
-Versión PHP - 8.1  
-Versión Mysql - 8.0  
-Versión Composer - 2.5.8  
-Versión NPM - 9.5.1  
+Versión PHP - 8.1
+Versión Mysql - 8.0
+Versión Composer - 2.5.8
+Versión NPM - 9.5.1
 
 ### Instalación 🔧
 
@@ -72,6 +72,14 @@ _Actualize las dependencias de NPM con_
 npm update
 ```
 
+_compile css y js_
+
+```
+npm run dev
+o
+npm run build
+```
+
 _Copie el Archivo .env.example en un archivo nuevo .env con_
 
 ```
@@ -102,15 +110,18 @@ _Corra el proyecto con_
 php artisan serve
 ```
 
-_Si todo está correcto puede acceder al proyecto en la dirección http://localhost:8000_ 
+_Si todo está correcto puede acceder al proyecto en la dirección http://localhost:8000_
 
-Usuario: admin@admin.com
+Super Admin: superadmin@gmail.com
+Admin: admin@gmail.com
+Usuario: usuario@gmail.com
 
 Contraseña: password
 
 ### Personalización
 
 El sistema base está diseñado para ser personalizado. Puedes modificar lo que requieras para adaptar el sistema a tus necesidades.
+
 Desarrolle esta base porque no encontre una que se adaptara a lo que yo necesitaba y que realmente ahorrara tiempo para nuevos desarrollos, espero les sea util sobretodo a los que se inician con laravel.
 
 ### Contribuir
@@ -121,5 +132,5 @@ Las contribuciones son bienvenidas. Puedes reportar problemas o enviar pull requ
 Este proyecto está bajo la licencia MIT.
 
 ---
-[Robert Arias](https://github.com/robertjota)  
+[Robert Arias](https://github.com/robertjota)
 _Desarrollador de Sistemas_

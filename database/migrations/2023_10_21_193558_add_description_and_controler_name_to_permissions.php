@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::table('permissions', function (Blueprint $table) {
             $table->string('description', 100)->nullable()->after('name');
-            $table->string('controller_name', 100)->nullable()->after('description');
         });
     }
 
@@ -24,7 +23,6 @@ return new class extends Migration
     {
         Schema::table('permissions', function (Blueprint $table) {
             $table->$table->dropColumn('description');
-            $table->$table->dropColumn('controller_name');
         });
     }
 };

@@ -39,8 +39,7 @@ class PermissionController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'description' => 'required',
-            'controller_name' => 'required'
+            'description' => 'required'
         ]);
 
         $role = Permission::create($request->all());

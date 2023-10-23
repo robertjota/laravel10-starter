@@ -8,6 +8,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
+
 class UsersSeeder extends Seeder
 {
     /**
@@ -17,11 +18,27 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        $superAdmin = User::create([
+            'name' => 'Super Admin',
+            'email' => 'superadmin@gmail.com',
+            'email_verified_at' => Carbon::now(),
+            'password' => 'password'
+        ]);
+        $admin = User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'email_verified_at' => Carbon::now(),
-            'password' => Hash::make('password')
+            'password' => 'password'
         ]);
+        $usuario = User::create([
+            'name' => 'Usuario',
+            'email' => 'usuario@gmail.com',
+            'email_verified_at' => Carbon::now(),
+            'password' => 'password'
+        ]);
+
+        $superAdmin->assignRole('Super Admin');
+        $admin->assignRole('Admin');
+        $usuario->assignRole('Usuario');
     }
 }
