@@ -64,7 +64,7 @@ return [
     */
 
     'logo' => '<b>Ria</b>CAD',
-    'logo_img' => 'img/rrsistemas-logo.png',
+    'logo_img' => 'assets/img/riacad.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -84,12 +84,12 @@ return [
     */
 
     'auth_logo' => [
-        'enabled' => false,
+        'enabled' => true,
         'img' => [
-            'path' => 'img/rrsistemas-logo.png',
+            'path' => 'assets/img/riacad.png',
             'alt' => 'RiaCAD Logo',
             'class' => '',
-            'width' => 50,
+            'width' => 80,
             'height' => 50,
         ],
     ],
@@ -291,11 +291,11 @@ return [
 
     'menu' => [
         // Navbar items:
-        [
+        /*  [
             'type'         => 'navbar-search',
             'text'         => 'Buscar...',
             'topnav_right' => true,
-        ],
+        ], */
         [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
@@ -310,12 +310,12 @@ return [
             'text'  => 'Dashboard',
             'route' => 'dashboard',
             'icon'  => 'fas fa-fw fa-tachometer-alt',
-            //'can'  => 'admin.home',
+            'can'  => 'admin.home',
         ],
         [
             'text'    => 'Configuración',
             'icon'    => 'fas fa-fw fa-cog',
-            //'can'  => 'admin.users.index',
+            'can'  => 'admin.users.index',
             'submenu' => [
                 [
                     'text'        => 'Usuarios',
@@ -327,13 +327,13 @@ return [
                     'text'        => 'Roles',
                     'route'         => 'admin.roles.index',
                     'icon'        => 'fas fa-fw fa-users-cog',
-                    // 'can'  => 'admin.roles.index',
+                    'can'  => 'admin.roles.index',
                 ],
                 [
                     'text'        => 'Permisos',
                     'route'         => 'admin.permissions.index',
                     'icon'        => 'fas fa-fw fa-lock',
-                    // 'can'  => 'admin.permissions.index',
+                    'can'  => 'admin.permissions.index',
                 ]
             ],
         ],
@@ -341,12 +341,12 @@ return [
         [
             'text'    => 'Mi Cuenta',
             'icon'    => 'fas fa-fw fa-cog',
+            //'can'  => 'admin.profiles.index',
             'submenu' => [
                 [
                     'text' => 'profile',
                     'route'  => 'admin.profiles.index',
                     'icon' => 'fas fa-fw fa-user',
-                    //'can'  => 'admin.profiles.index',
                 ],
             ],
         ],
