@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Ria</b>CAD',
+    'logo' => '', //<b>Ria</b>CAD
     'logo_img' => 'assets/img/riacad.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -89,8 +89,8 @@ return [
             'path' => 'assets/img/riacad.png',
             'alt' => 'RiaCAD Logo',
             'class' => '',
-            'width' => 80,
-            'height' => 50,
+            'width' => 180,
+            'height' => '',
         ],
     ],
 
@@ -131,7 +131,7 @@ return [
 
     'usermenu_enabled' => true,
     'usermenu_header' => true,
-    'usermenu_header_class' => 'bg-primary',
+    'usermenu_header_class' => 'bg-sky',
     'usermenu_image' => true,
     'usermenu_desc' => true,
     'usermenu_profile_url' => true,
@@ -172,7 +172,7 @@ return [
     'classes_auth_body' => '',
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
-    'classes_auth_btn' => 'btn-flat btn-primary',
+    'classes_auth_btn' => 'btn btn-primary',
 
     /*
     |--------------------------------------------------------------------------
@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => '/',
+    'dashboard_url' => '/admin',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'false',
