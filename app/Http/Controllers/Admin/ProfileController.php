@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Support\Facades\DB;
+
 use App\Models\User;
 use App\Http\Controllers\Controller;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -13,6 +12,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Str;
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class ProfileController extends Controller
 {
@@ -21,13 +22,13 @@ class ProfileController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(): View
     {
 
         return view('admin.profiles.index');
     }
 
-    public function update(Request $request, User $user)
+    public function update(Request $request, User $user): RedirectResponse
     {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -80,10 +81,10 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return redirect()->route('admin.profiles.index')->with('info', 'Perfil actualizado correctamente');
+        return redirect()->route('admin.profiles.index')->with('info', __('Updated successfully'));
     }
 
-    private function removeImage($oldFile)
+    private function removeImage($oldFile): void
     {
         if (!$oldFile) {
             return;

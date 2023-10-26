@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class PermissionController extends Controller
 {
@@ -13,7 +15,7 @@ class PermissionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $permissions = Permission::all();
         return view('admin.permissions.index', compact('permissions'));
@@ -24,7 +26,7 @@ class PermissionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
         return view('admin.permissions.create');
     }
@@ -35,7 +37,7 @@ class PermissionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $request->validate([
             'name' => 'required',
@@ -44,7 +46,7 @@ class PermissionController extends Controller
 
         $role = Permission::create($request->all());
 
-        return to_route('admin.permissions.index')->with('info', 'El Permiso se creó con éxito');
+        return to_route('admin.permissions.index')->with('info', __('Add successfully'));
     }
 
     /**
@@ -53,7 +55,7 @@ class PermissionController extends Controller
      * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function show(Permission $permission)
+    public function show(Permission $permission): View
     {
         return view('admin.permissions.show', compact('permission'));
     }
@@ -64,7 +66,7 @@ class PermissionController extends Controller
      * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function edit(Permission $permission)
+    public function edit(Permission $permission): View
     {
         return view('admin.permissions.edit', compact('permission'));
     }
@@ -76,7 +78,7 @@ class PermissionController extends Controller
      * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Permission $permission)
+    public function update(Request $request, Permission $permission): RedirectResponse
     {
         $request->validate([
             'name' => 'required',
@@ -86,7 +88,7 @@ class PermissionController extends Controller
         $permission->update($request->all());
 
 
-        return to_route('admin.permissions.index')->with('info', 'El Permiso se actualizó con éxito');
+        return to_route('admin.permissions.index')->with('info', __('Updated successfully'));
     }
 
     /**
@@ -95,10 +97,10 @@ class PermissionController extends Controller
      * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Permission $permission)
+    public function destroy(Permission $permission): RedirectResponse
     {
         $permission->delete();
 
-        return to_route('admin.permmisions.index')->with('info', 'El Permiso se eliminó con éxito');
+        return to_route('admin.permmisions.index')->with('info', __('Deleted successfully'));
     }
 }

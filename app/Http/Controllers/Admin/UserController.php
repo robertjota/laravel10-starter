@@ -10,38 +10,25 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function index(): View
     {
         $users = User::get();
         return view('admin.users.index', compact('users'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function create(): View
     {
         $roles = Role::all();
         return view('admin.users.create', compact('roles'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $this->validate($request, [
             'name' => 'required',
@@ -57,28 +44,17 @@ class UserController extends Controller
         $user->assignRole($request->input('roles'));
 
         return redirect()->route('admin.users.index')
-            ->with('info', 'Creado Correctamente');
+            ->with('info', __('Add successfully'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $user)
+
+    public function show(User $user): View
     {
         //$user = User::find($user);
         return view('admin.users.show', compact('user'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(User $user)
+    public function edit(User $user): View
     {
         //$user = User::find($user);
         $roles = Role::get();
@@ -87,26 +63,14 @@ class UserController extends Controller
         return view('admin.users.edit', compact('user', 'roles', 'userRole'));
     }
 
-    /**
-     * Formulario para asignar rol.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function asignar(User $user)
+
+    public function asignar(User $user): View
     {
         $roles = Role::all();
         return view('admin.users.asignar', compact('user', 'roles'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, User $user)
+    public function update(Request $request, User $user): RedirectResponse
     {
         $this->validate($request, [
             'name' => 'required',
@@ -124,34 +88,22 @@ class UserController extends Controller
         $user->update($input);
         $user->roles()->sync($request->roles);
 
-        return redirect()->route('admin.users.index')
-            ->with('info', 'Se Actualizó Correctamente');
+        return to_route('admin.users.index')
+            ->with('info', __('Update successfully'));
     }
 
-    /**
-     * Update Asignar the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function asignarUpdate(Request $request, User $user)
+    public function asignarUpdate(Request $request, User $user): RedirectResponse
     {
         $user->roles()->sync($request->roles);
-        return redirect()->route('admin.users.index')->with('info', 'Se asignó el rol correctamente');
+        return redirect()->route('admin.users.index')
+            ->with('info', __('Assigned successfully'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $user)
+    public function destroy(User $user): RedirectResponse
     {
         $user->delete();
 
         return redirect()->route('admin.users.index')
-            ->with('info', 'Eliminado Correctamente');
+            ->with('info', __('Deleted successfully'));
     }
 }

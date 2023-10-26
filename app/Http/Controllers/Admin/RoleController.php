@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class RoleController extends Controller
 {
@@ -15,7 +16,7 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $roles = Role::all();
         return view('admin.roles.index', compact('roles'));
@@ -26,7 +27,7 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
         $permissions = Permission::get();
 
@@ -39,7 +40,7 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $request->validate([
             'name' => 'required|unique:roles,name'
@@ -48,7 +49,7 @@ class RoleController extends Controller
         $role = Role::create($request->all());
         $role->Permissions()->sync($request->permissions);
 
-        return to_route('admin.roles.index', $role)->with('info', 'El Rol se creó con éxito');
+        return to_route('admin.roles.index', $role)->with('info', __('Add successfully'));
     }
 
     /**
@@ -57,7 +58,7 @@ class RoleController extends Controller
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(Role $role)
+    public function show(Role $role): View
     {
         $role->load('permissions');
 
@@ -70,7 +71,7 @@ class RoleController extends Controller
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit(Role $role)
+    public function edit(Role $role): View
     {
         $permissions = Permission::get();
         $role->load('permissions');
@@ -85,7 +86,7 @@ class RoleController extends Controller
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Role $role)
+    public function update(Request $request, Role $role): RedirectResponse
     {
         $request->validate([
             'name' => 'required'
@@ -94,7 +95,7 @@ class RoleController extends Controller
         $role->update($request->all());
         $role->Permissions()->sync($request->permissions);
 
-        return to_route('admin.roles.index', $role)->with('info', 'El Rol se actualizó con éxito');
+        return to_route('admin.roles.index', $role)->with('info', __('Updated successfully'));
     }
 
     /**
@@ -103,10 +104,10 @@ class RoleController extends Controller
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Role $role)
+    public function destroy(Role $role): RedirectResponse
     {
         $role->delete();
 
-        return redirect()->route('admin.roles.index', $role)->with('info', 'El Rol se eliminó con éxito');
+        return redirect()->route('admin.roles.index', $role)->with('info', __('Deleted successfully'));
     }
 }
