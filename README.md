@@ -1,5 +1,5 @@
 # Laravel 10 Starter
-Admin Panel basado en laravel 10, bootstrap 5, adminLTE 3 y con roles y permisos integrado
+Admin Panel basado en laravel 10, bootstrap 5, adminLTE 3 con roles y permisos integrado
 
 ## Características
 
