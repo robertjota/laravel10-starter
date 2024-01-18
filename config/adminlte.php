@@ -300,53 +300,46 @@ return [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
-
-        // Sidebar items:
-        /*         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ], */
         [
             'text'  => 'Dashboard',
             'route' => 'dashboard',
             'icon'  => 'fas fa-fw fa-tachometer-alt',
-            'can'  => 'admin.home',
+            'can'   => 'admin.home',
         ],
         [
-            'text'    => 'Configuración',
-            'icon'    => 'fas fa-fw fa-cog',
-            'can'  => 'admin.users.index',
-            'submenu' => [
+            'text'  => 'Configuración',
+            'icon'  => 'fas fa-fw fa-cog',
+            'can'   => 'admin.users.index',
+            'submenu'   => [
                 [
-                    'text'        => 'Usuarios',
-                    'route'       => 'admin.users.index',
-                    'icon'        => 'fas fa-fw fa-user',
-                    // 'can'  => 'admin.users.index',
+                    'text'  => 'Usuarios',
+                    'route' => 'admin.users.index',
+                    'icon'  => 'fas fa-fw fa-user',
+                    'can'   => 'admin.users.index',
                 ],
                 [
-                    'text'        => 'Roles',
-                    'route'         => 'admin.roles.index',
-                    'icon'        => 'fas fa-fw fa-users-cog',
-                    'can'  => 'admin.roles.index',
+                    'text'  => 'Roles',
+                    'route' => 'admin.roles.index',
+                    'icon'  => 'fas fa-fw fa-users-cog',
+                    'can'   => 'admin.roles.index',
                 ],
                 [
-                    'text'        => 'Permisos',
-                    'route'         => 'admin.permissions.index',
-                    'icon'        => 'fas fa-fw fa-lock',
-                    'can'  => 'admin.permissions.index',
+                    'text'  => 'Permisos',
+                    'route' => 'admin.permissions.index',
+                    'icon'  => 'fas fa-fw fa-lock',
+                    'can'   => 'admin.permissions.index',
                 ]
             ],
         ],
-        ['header' => 'account_settings'],
+        ['header'   => 'account_settings'],
         [
-            'text'    => 'Mi Cuenta',
-            'icon'    => 'fas fa-fw fa-cog',
-            //'can'  => 'admin.profiles.index',
-            'submenu' => [
+            'text'  => 'Mi Cuenta',
+            'icon'  => 'fas fa-fw fa-cog',
+            'submenu'   => [
                 [
-                    'text' => 'profile',
-                    'route'  => 'admin.profiles.index',
-                    'icon' => 'fas fa-fw fa-user',
+                    'text'  => 'profile',
+                    'route' => 'admin.profiles.index',
+                    'icon'  => 'fas fa-fw fa-user',
                 ],
             ],
         ],
