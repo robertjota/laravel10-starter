@@ -1,5 +1,7 @@
-# Laravel 10 Starter
+# Laravel Starter
 Admin Panel basado en laravel 10, bootstrap 5, adminLTE 3 con roles y permisos integrado
+
+Actualizado a Laravel 11
 
 ## Características
 
@@ -33,10 +35,10 @@ https://www.npmjs.com/get-npm
 
 Verifica las versiones de cada uno de ellos
 
-Versión PHP - 8.1
+Versión PHP - 8.2
 Versión Mysql - 8.0
 Versión Composer - 2.5.8
-Versión NPM - 9.5.1
+Versión NPM - 10.1.0
 
 ### Instalación 🔧
 
