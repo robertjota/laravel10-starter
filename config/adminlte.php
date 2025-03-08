@@ -63,10 +63,11 @@ return [
     |
     */
 
+    'classes_brand' => 'text-center', // Añadimos esta clase
     'logo' => '', //<b>Ria</b>CAD
-    'logo_img' => 'assets/img/riacad.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
-    'logo_img_xl' => null,
+    'logo_img' => 'assets/img/logo-riacad-short.JPG',
+    'logo_img_class' => 'brand-image elevation-3',
+    'logo_img_xl' => 'assets/img/logo-new.png',
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'RiaCAD Logo',
 
@@ -86,7 +87,7 @@ return [
     'auth_logo' => [
         'enabled' => true,
         'img' => [
-            'path' => 'assets/img/riacad.png',
+            'path' => 'assets/img/logo-new-p.png',
             'alt' => 'RiaCAD Logo',
             'class' => '',
             'width' => 180,
@@ -109,8 +110,8 @@ return [
     'preloader' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'AdminLTE Preloader Image',
+            'path' => 'assets/img/logo-new-p.png',
+            'alt' => 'RiaCAD Logo',
             'effect' => 'animation__shake',
             'width' => 60,
             'height' => 60,
@@ -131,7 +132,7 @@ return [
 
     'usermenu_enabled' => true,
     'usermenu_header' => true,
-    'usermenu_header_class' => 'bg-sky',
+    'usermenu_header_class' => 'bg-gray',
     'usermenu_image' => true,
     'usermenu_desc' => true,
     'usermenu_profile_url' => true,

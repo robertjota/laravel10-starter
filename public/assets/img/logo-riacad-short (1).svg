@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 74 120" style="enable-background:new 0 0 74 120;" xml:space="preserve">
+<style type="text/css">
+	.st1{fill:#FFFFFF;stroke:#F7941E;stroke-width:3;stroke-miterlimit:10;}
+	.st3{fill:#F7941E;}
+</style>
+<rect x="15.5" y="14.5" class="st1" width="74" height="100"/>
+<g>
+	<path class="st3" d="M36.7,64.1c-0.2-4.1,0.6-8.1,2.3-11.9c1.7-3.8,3.9-7.1,6.8-10c2.8-2.9,6.2-5.2,10-6.8
+		c3.8-1.7,7.7-2.4,11.8-2.4v5.5c-3.5,0-6.8,0.7-9.9,2c-3.1,1.4-5.8,3.2-8.1,5.5c-2.3,2.3-4.1,5-5.4,8.1s-2,6.4-2,10v31h-5.4V64.1z"
+		/>
+</g>
+</svg>
